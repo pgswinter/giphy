@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 //import { Test } from './LoadableLoading.styles';
 
@@ -32,15 +32,15 @@ LoadableLoading.defaultProps = {
   // bla: 'test',
 };
 
-const mapStateToProps = state => ({
-  // blabla: state.blabla,
-});
+// const mapStateToProps = state => ({
+//   // blabla: state.blabla,
+// });
 
-const mapDispatchToProps = dispatch => ({
-  // fnBlaBla: () => dispatch(action.name()),
-});
+// const mapDispatchToProps = dispatch => ({
+//   // fnBlaBla: () => dispatch(action.name()),
+// });
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  // mapStateToProps,
+  // mapDispatchToProps,
 )(LoadableLoading);

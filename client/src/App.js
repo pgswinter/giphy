@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Route } from "react-router-dom";
 import {
   Switch,
@@ -56,19 +56,19 @@ class App extends Component {
   };
 }
 
-App.propTypes = {
+// App.propTypes = {
 
-};
+// };
 
-const mapStateToProps = (state) => {
-  return state
-}
+// const mapStateToProps = (state) => {
+//   return state
+// }
 
-const mapDispatchToProps = (dispatch) => ({
+// const mapDispatchToProps = (dispatch) => ({
 
-});
+// });
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  // mapStateToProps,
+  // mapDispatchToProps
 )(App);

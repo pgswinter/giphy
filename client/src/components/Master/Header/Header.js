@@ -15,8 +15,8 @@ Header.propTypes = {
   favourite: PropTypes.number,
 };
 
-Header.defaultProps = {
-  // bla: 'test',
-};
+// Header.defaultProps = {
+//   // bla: 'test',
+// };
 
 export default Header;

@@ -59,6 +59,7 @@ function* watchReqInsertFavourite() {
 // *********************************************************
 function* reqSearchGiphy(params) {
     const { apiInfo } = params.params;
+    
     const favouriteList = params.params.favouriteList.data;
     try {
         const { data } = yield call(() => api.Giphy.search(apiInfo));

@@ -19,7 +19,6 @@ class HomePage extends PureComponent {
 
     this.state = {
       newGiphyList: [], // Giphy image includes is_favourite attr
-      favouriteList: [],
       searchInput: '',
       apiInfo: {
         q: '', // keyword search
@@ -76,7 +75,7 @@ class HomePage extends PureComponent {
 
       }, () => {
         const { apiInfo } = this.state
-        
+
         const { favouriteList } = this.props; // load from componentDidMount
         const params = {
           apiInfo,
@@ -89,8 +88,11 @@ class HomePage extends PureComponent {
         searchInput: ''
       }, () => {
         const { apiInfo } = this.state
+
+        const { favouriteList } = this.props; // load from componentDidMount
         const params = {
-          ...apiInfo
+          apiInfo,
+          favouriteList
         }
         this.props.reqSearchGiphy(params);
       })
@@ -102,35 +104,38 @@ class HomePage extends PureComponent {
     const { giphyList } = this.props;
     const loading = giphyList && giphyList.loading;
     const isLoaded = giphyList && giphyList.isLoaded;
-    
+
     return (
       <div className='container'>
         <div className="searchPage">
           <input placeholder="Start searching for images!" type="text" onChange={(e) => this.handleChangeInput(e)} value={searchInput} />
           {
-            (!loading && isLoaded) ?
-              <ul className="img-list">
-                {
-                  newGiphyList.length > 0
-                    ?
-                    newGiphyList.map((item, i) =>
-                      <ItemImage
-                        handleFavourite={this.handleFavourite}
-                        key={i}
-                        item={item}
-                      />)
-                    :
-                    giphyList.data &&
-                    giphyList.data.length > 0 &&
-                    giphyList.data.map((item, i) =>
-                      <ItemImage
-                        handleFavourite={this.handleFavourite}
-                        key={i}
-                        item={item}
-                      />)
-                }
-              </ul> :
-              (searchInput.length > 0 ? <Loading /> : '')
+            searchInput.length > 0 ?
+              (
+                (!loading && isLoaded) ?
+                  <ul className="img-list">
+                    {
+                      newGiphyList.length > 0
+                        ?
+                        newGiphyList.map((item, i) =>
+                          <ItemImage
+                            handleFavourite={this.handleFavourite}
+                            key={i}
+                            item={item}
+                          />)
+                        :
+                        giphyList.data &&
+                        giphyList.data.length > 0 &&
+                        giphyList.data.map((item, i) =>
+                          <ItemImage
+                            handleFavourite={this.handleFavourite}
+                            key={i}
+                            item={item}
+                          />)
+                    }
+                  </ul> :
+                  <Loading />
+              ) : ''
           }
         </div>
       </div>
@@ -139,7 +144,12 @@ class HomePage extends PureComponent {
 }
 
 HomePage.propTypes = {
-  // bla: PropTypes.string,
+  reqAllFavourite: PropTypes.func,
+  giphyList: PropTypes.object,
+  favouriteList: PropTypes.object,
+  reqSearchGiphy: PropTypes.func,
+  reqProcessLocal: PropTypes.func,
+  reqInsertFavourite: PropTypes.func,
 };
 
 HomePage.defaultProps = {
