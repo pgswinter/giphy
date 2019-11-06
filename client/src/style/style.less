@@ -1,0 +1,157 @@
+@import (css) url('./segoeui/style.css');
+@import (css) url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900&display=swap');
+@import './variable.less';
+
+.wrap {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family  : 'Roboto', sans-serif;
+    margin-bottom: 0;
+}
+
+ul {
+    padding-left: 0;
+
+    li {
+        list-style-type: none;
+    }
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    ;
+
+    &.toUppercase {
+        text-transform: uppercase;
+    }
+}
+
+.img-list {
+    display       : flex;
+    flex-direction: column;
+    flex-wrap     : wrap;
+    width         : 1024px;
+    height        : 100vh;
+
+    li {
+        width  : 200px;
+        display: flex;
+        margin : 5px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        &.active {
+            .favourite {
+                display: block;
+            }
+        }
+        &:hover {
+            .favourite {
+                display: block;
+                opacity: 0.5;
+            }
+        }
+        .favourite {
+            display: none;
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+        }
+        .imageloader {
+            img {
+                width        : 100%;
+                border-radius: 4px;
+            }
+        }
+
+    }
+}
+
+.container {
+    width  : 1024px;
+    margin : 0 auto;
+    padding: 30px 0;
+
+    .searchPage {
+        input {
+            border       : none;
+            padding      : 15px;
+            border-bottom: 1px solid #ccc;
+            width        : 100%;
+            font-size    : 2em;
+            font-weight  : 100;
+            color        : #555;
+
+            &::placeholder {
+                color: #cdcdcd
+            }
+        }
+    }
+}
+
+.hedaerWrapper {
+    padding      : 30px;
+    border-bottom: 1px solid #ccc;
+
+    h1 {
+        margin-bottom: 0;
+        font-size    : 2em;
+        color        : #555;
+
+        .left {
+            font-weight: 100;
+            padding    : 0 30px;
+        }
+
+        .right {
+            color: #ccc
+        }
+
+        label {
+            padding: 0 30px;
+        }
+
+        label,
+        span {
+            font-weight: 400;
+        }
+    }
+}
+
+.footerWrapper {
+    background-color: #eee;
+    padding         : 15px 0;
+    display         : flex;
+
+    footer {
+        display: flex;
+        width  : 100%;
+
+        >* {
+            flex: 1 0 50%;
+        }
+
+        h3,
+        h4 {
+            font-size    : 1em;
+            margin-bottom: 0;
+            font-weight  : 700;
+            color        : #555;
+        }
+
+        h3 {
+            padding-left: 60px;
+        }
+
+        h4 {
+            text-align   : right;
+            padding-right: 60px;
+        }
+    }
+
+}

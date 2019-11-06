@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Segoe UI Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./Segoe-UI.woff') format('woff');
+    src: url('./Segoe-UI.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Segoe UI Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./Segoe-UI-Italic.woff') format('woff');
+    src: url('./Segoe-UI-Italic.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Segoe UI Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./Segoe-UI-Bold.woff') format('woff');
+    src: url('./Segoe-UI-Bold.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Segoe UI Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./Segoe-UI-Bold-Italic.woff') format('woff');
+    src: url('./Segoe-UI-Bold-Italic.ttf') format("truetype");
+}
